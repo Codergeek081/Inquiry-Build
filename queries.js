@@ -46,7 +46,15 @@ export async function addDepartment(departmentName, sql) {
 }
 
 
-export function addRole() {
+export async function addRole(title, salary, departmentId, sql) {
+    try {
+        await sql`
+        INSERT INTO role (title, salary, department_id) VALUES (${title}, ${salary}, ${departmentId})`;
+        console.log(`Role "${title}" added successfully.`);
+    } catch (error){
+        console.log('An Error has occured while adding role:', error.message);
+    }
+
   console.log('addRole')
 }
 

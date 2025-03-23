@@ -77,7 +77,7 @@ async function companyCMS(sql) {
           message: "Enter the department ID for the role:"
         }
       ]);
-      await addRole(title, parseFloat(salary), parseInt(departmentId));
+      await addRole(title, parseFloat(salary), parseInt(departmentId), sql);
       break;
     }
 
